@@ -405,6 +405,7 @@ class DashboardView extends GetView<DashboardController> {
   }
 }
 
+// j jkdfh lldlj
 class ColorCategory extends StatelessWidget {
   const ColorCategory({
     required this.controller,
