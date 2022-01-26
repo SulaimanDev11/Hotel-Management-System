@@ -16,7 +16,7 @@ class DashboardController extends GetxController {
   var emptyTableColor = Colors.blue[100].obs;
   var amountColor = Colors.black.obs;
 
-  void insertPortion(String itemName, String itemPrice) async {
+  void insertPortion(String itemName, int itemPrice) async {
     // row to insert
     Map<String, dynamic> row = {
       DatabaseHelper.dataName: itemName,
@@ -54,6 +54,7 @@ class DashboardController extends GetxController {
 
   @override
   void onInit() {
+    insertPortion('chicken', 70);
     queryPortion();
     super.onInit();
   }

@@ -20,7 +20,7 @@ class DashboardView extends GetView<DashboardController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.red[200],
+        backgroundColor: Colors.green[200],
         title: Text('POSRest'),
         leading: IconButton(
             onPressed: () {
@@ -54,6 +54,7 @@ class DashboardView extends GetView<DashboardController> {
                                 ),
                                 GestureDetector(
                                   onTap: () {
+                                    controller.queryPortion();
                                     Get.back();
                                   },
                                   child: Container(
@@ -277,11 +278,7 @@ class DashboardView extends GetView<DashboardController> {
                     );
             },
             itemBuilder: (context) => [
-              PopupMenuItem(
-                child: Text("Add New Portion"),
-                value: 1,
-                onTap: () {},
-              ),
+              PopupMenuItem(child: Text("Add New Portion"), value: 1),
               PopupMenuItem(child: Text("Change Layout Setting"), value: 2)
             ],
           ),
@@ -312,8 +309,8 @@ class DashboardView extends GetView<DashboardController> {
                         TextButton(
                           child: const Text('Approve'),
                           onPressed: () {
-                            controller.insertPortion(
-                                nameController.text, priceController.text);
+                            controller.insertPortion(nameController.text,
+                                int.parse(priceController.text));
                             Get.back();
                           },
                         ),
@@ -352,11 +349,19 @@ class DashboardView extends GetView<DashboardController> {
                                   ),
                                 ),
                               ),
-                              Positioned(
-                                right: 0.w,
-                                child: Icon(
-                                  Icons.more_vert,
-                                  size: 25.h,
+                              GestureDetector(
+                                onTap: () {},
+                                child: PopupMenuButton(
+                                  icon: Icon(Icons.edit),
+                                  padding:
+                                      EdgeInsets.symmetric(horizontal: 0.0),
+                                  itemBuilder: (context) => [
+                                    PopupMenuItem(
+                                        child: Text("Edit Item Name"),
+                                        value: 1),
+                                    PopupMenuItem(
+                                        child: Text("Delete Item"), value: 2)
+                                  ],
                                 ),
                               ),
                             ],
