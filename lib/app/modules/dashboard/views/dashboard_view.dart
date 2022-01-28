@@ -7,12 +7,12 @@ import 'package:pos_rest/app/routes/app_pages.dart';
 import '../controllers/dashboard_controller.dart';
 
 class DashboardView extends GetView<DashboardController> {
-  var data = [
-    {'tableId': 'tableId1', 'tableName': 'tableName1', 'productId': '12'},
-    {'tableId': 'tableId2', 'tableName': 'tableName2', 'productId': '34'},
-    {'tableId': 'tableId3', 'tableName': 'tableName3', 'productId': '56'},
-    {'tableId': 'tableId4', 'tableName': 'tableName4', 'productId': '78'},
-  ];
+  // var data = [
+  //   {'tableId': 'tableId1', 'tableName': 'tableName1', 'productId': '12'},
+  //   {'tableId': 'tableId2', 'tableName': 'tableName2', 'productId': '34'},
+  //   {'tableId': 'tableId3', 'tableName': 'tableName3', 'productId': '56'},
+  //   {'tableId': 'tableId4', 'tableName': 'tableName4', 'productId': '78'},
+  // ];
   TextEditingController nameController = TextEditingController();
   TextEditingController priceController = TextEditingController();
 
